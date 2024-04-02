@@ -1,7 +1,8 @@
+// let ans = [];
+	let arr = [];
 function stringChop(str, size) {
   // your code here
-	let arr = [];
-	if(str.length === 0 || size < 1) {
+	if(str=== '' || size < 1 || str === null) {
 		return [];
 	}
 	let i = 0;
@@ -14,7 +15,7 @@ function stringChop(str, size) {
 		arr.push(chunk);
 	}
 	if(n-i < size){
-		chunk = "";
+		let chunk = "";
 		for(let j = i; j < n; j++){
 			chunk += str.charAt(j);
 		}
@@ -23,6 +24,14 @@ function stringChop(str, size) {
 		}
 	}
 	return arr;
+	// if(str==='' || str===null){
+	// return [];
+ //  }
+ //  for (let i = 0; i < str.length; i += size) {
+ //    slice(str, i, i + size);
+ //  }
+
+ //  return ans;
 	
 	
 	// if(str.length <= size) return str;
@@ -33,6 +42,10 @@ function stringChop(str, size) {
 	// }
 	// return arr;                                         
 }
+// function slice(str, start, end) {
+//   let sliced = str.slice(start, end);
+//   ans.push(sliced);
+// }
 // Do not change the code below
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
