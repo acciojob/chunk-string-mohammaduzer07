@@ -3,10 +3,10 @@ function stringChop(str, size) {
   // your code here
 	let arr = [];
 	let n = str.length;
-	if(str === null){
-		return [];
-	}
-	if(str=== '' || size < 1 || str === null) {
+	// if(str === null){
+	// 	return [];
+	// }
+	if(str=== '' || str === null) {
 		return [];
 	}
 	let i = 0;
