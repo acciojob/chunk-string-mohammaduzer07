@@ -1,7 +1,8 @@
 // let ans = [];
-	let arr = [];
 function stringChop(str, size) {
   // your code here
+	let arr = [];
+	let n = str.length;
 	if(str=== '' || size < 1 || str === null) {
 		return [];
 	}
@@ -15,7 +16,7 @@ function stringChop(str, size) {
 		arr.push(chunk);
 	}
 	if(n-i < size){
-		let chunk = "";
+		chunk = "";
 		for(let j = i; j < n; j++){
 			chunk += str.charAt(j);
 		}
@@ -24,6 +25,28 @@ function stringChop(str, size) {
 		}
 	}
 	return arr;
+
+	//   let n=str.length;
+	// if(n===0 || size<1) return [];
+	//  let i=0;
+	//  let starr=[];
+
+	//  while(i<n){
+	// 	  let btr="";
+	// 	  for(let j=0;j<size;j++){
+	// 	    btr+=str.charAt(i);
+	// 	    i++;
+	// 	  }
+	// 	  starr.push(btr);
+	//  }
+	//  if(n-i<size) {
+	//   btr="";
+	//  for(let j=i;j<n;j++){
+	//   btr+=str.charAt(j);
+	//  }
+	//  if(btr!="") starr.push(btr);
+	// }
+	//  return starr;
 	// if(str==='' || str===null){
 	// return [];
  //  }
