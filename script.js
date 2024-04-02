@@ -1,20 +1,16 @@
 function stringChop(str, size) {
   // your code here
-	let arr = {};
-	let chunk = "";
-	let len = 0;
-	if(str.length < size){
-		return str;
+	let arr = [];
+	if(str.length === 0 || size < 1) {
+		return [];
 	}
-	for(int i = 0; i < str.length; i++){
-		chunk += str.charAt(i);
-		if(chunk.length === size){
-			arr[len] = chunk;
-			chunk = "";
-			len++;
-		}
+	if(str.length <= size) return str;
+	let i = 0;
+	for(i < str.length){
+		arr.push(str.slice(i, i+size));
+		i = i + size;
 	}
-	return arr;
+	return arr;                                         
 }
 // Do not change the code below
 const str = prompt("Enter String.");
