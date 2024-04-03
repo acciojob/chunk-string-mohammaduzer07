@@ -6,7 +6,7 @@ function stringChop(str, size) {
 	// if(str === null){
 	// 	return [];
 	// }
-	if(str=== '' || str === null) {
+	if(str==='' || str===null) {
 		return [];
 	}
 	let i = 0;
@@ -19,16 +19,16 @@ function stringChop(str, size) {
 		arr.push(chunk);
 	}
 	if(n-i < size){
-		chunk = "";
+		chunk = ""; 
 		for(let j = i; j < n; j++){
 			chunk += str.charAt(j);
 		}
 		if(chunk != ""){
 			arr.push(chunk);
 		}
-	}
+	} 
 	return arr;
-
+ 
 	//   let n=str.length;
 	// if(n===0 || size<1) return [];
 	//  let i=0;
