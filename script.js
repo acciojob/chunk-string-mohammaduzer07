@@ -1,17 +1,15 @@
 // let ans = [];
 function stringChop(str, size) {
   // your code here
-	let arr = [];
+	const arr = [];
 	let n = str.length;
-	// if(str === null){
-	// 	return [];
-	// }
-	if(str==='' || str===null) {
+	
+	if(str==="" || str===null) {
 		return [];
 	}
 	let i = 0;
 	while(i < n){
-		let chunk = ""
+		chunk = ""
 		for(let j = 0; j < size; j++){
 			chunk += str.charAt(i);
 			i++;
