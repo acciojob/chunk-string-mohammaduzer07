@@ -4,20 +4,41 @@ function stringChop(str, size) {
 	 if (str === null) {
     return []; // Return empty list for null input
   }
+	let arr = [];
+	let n = str.length;
+	let i = 0;
+	while(i < n){
+		let chunk = ""
+		for(let j = 0; j < size; j++){
+			chunk += str.charAt(i);
+			i++;
+		}
+		arr.push(chunk);
+	}
+	if(n-i < size){
+		chunk = ""; 
+		for(let j = i; j < n; j++){
+			chunk += str.charAt(j);
+		}
+		if(chunk != ""){
+			arr.push(chunk);
+		}
+	} 
+	return arr;
 
-  const chunks = [];
-  let i = 0;
-  while (i < str.length) {
-    chunks.push(str.slice(i, i + size)); // Use slice for efficient chunk extraction
-    i += size;
-  }
+  // const chunks = [];
+  // let i = 0;
+  // while (i < str.length) {
+  //   chunks.push(str.slice(i, i + size)); // Use slice for efficient chunk extraction
+  //   i += size;
+  // }
 
-  // Handle the last chunk if it's smaller than the specified size
-  if (str.length % size !== 0) {
-    chunks.push(str.slice(i)); // Get the remaining part
-  }
+  // // Handle the last chunk if it's smaller than the specified size
+  // if (str.length % size !== 0) {
+  //   chunks.push(str.slice(i)); // Get the remaining part
+  // }
 
-  return chunks; 
+  // return chunks; 
 	// const arr = [];
 	// let n = str.length;
 	
@@ -88,6 +109,6 @@ function stringChop(str, size) {
 //   ans.push(sliced);
 // }
 // Do not change the code below
-const str = prompt("Enter String.");
-const size = prompt("Enter Chunk Size.");
-alert(stringChop(str, size));
+// const str = prompt("Enter String.");
+// const size = prompt("Enter Chunk Size.");
+// alert(stringChop(str, size));
