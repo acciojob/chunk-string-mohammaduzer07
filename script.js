@@ -1,31 +1,48 @@
 // let ans = [];
 function stringChop(str, size) {
   // your code here
-	const arr = [];
-	let n = str.length;
+	 if (str === null) {
+    return []; // Return empty list for null input
+  }
+
+  const chunks = [];
+  let i = 0;
+  while (i < str.length) {
+    chunks.push(str.slice(i, i + size)); // Use slice for efficient chunk extraction
+    i += size;
+  }
+
+  // Handle the last chunk if it's smaller than the specified size
+  if (str.length % size !== 0) {
+    chunks.push(str.slice(i)); // Get the remaining part
+  }
+
+  return chunks; 
+	// const arr = [];
+	// let n = str.length;
 	
-	if(str==="" || str===null) {
-		return [];
-	}
-	let i = 0;
-	while(i < n){
-		chunk = ""
-		for(let j = 0; j < size; j++){
-			chunk += str.charAt(i);
-			i++;
-		}
-		arr.push(chunk);
-	}
-	if(n-i < size){
-		chunk = ""; 
-		for(let j = i; j < n; j++){
-			chunk += str.charAt(j);
-		}
-		if(chunk != ""){
-			arr.push(chunk);
-		}
-	} 
-	return arr;
+	// if(str==="" || str===null) {
+	// 	return [];
+	// }
+	// let i = 0;
+	// while(i < n){
+	// 	chunk = ""
+	// 	for(let j = 0; j < size; j++){
+	// 		chunk += str.charAt(i);
+	// 		i++;
+	// 	}
+	// 	arr.push(chunk);
+	// }
+	// if(n-i < size){
+	// 	chunk = ""; 
+	// 	for(let j = i; j < n; j++){
+	// 		chunk += str.charAt(j);
+	// 	}
+	// 	if(chunk != ""){
+	// 		arr.push(chunk);
+	// 	}
+	// } 
+	// return arr;
  
 	//   let n=str.length;
 	// if(n===0 || size<1) return [];
